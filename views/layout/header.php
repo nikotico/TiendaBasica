@@ -13,7 +13,7 @@
         <header id="header">
             <div id="logo">
                 <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta logo" />
-                <a href="index.php">
+                <a href="<?=base_url?>producto/index">
                     Tienda de Ropa
                 </a>
             </div>
