@@ -25,6 +25,7 @@ class Utils{
 			return true;
 		}
 	}
+	
 
 	public static function showCategorias(){
 		require_once 'models/categoria.php';
@@ -44,9 +45,27 @@ class Utils{
 			$stats['count'] = count($_SESSION['carrito']);
 
 			foreach($_SESSION['carrito'] as $index => $product){
-				$stats['total'] = $product['precio']*$product['unidades'];
+				$stats['total'] += $product['precio']*$product['unidades'];
 			}
 		}
 		return $stats;
+	}
+	public static function showStatus($tipo){
+		switch ($tipo) {
+			case "preparation":
+				$tipo = "En prepracion";
+				break;
+			case "ready":
+				$tipo = "Preparado para enviar";
+				break;
+			case "sended":
+				$tipo = "Enviado";
+				break;
+			default://"confirm"
+				$tipo = "Pendiente";
+				break;
+		}
+		return $tipo;
+		
 	}
 }

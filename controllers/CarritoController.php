@@ -50,9 +50,6 @@ class CarritoController{
 		header("Location:".base_url."carrito/index");
 	}
     
-    public function remove(){
-        echo "Index";
-    }
 
     public function delete_All(){
         Utils::deleteSession('carrito');

@@ -6,8 +6,7 @@
         <h3>Mi carrito</h3>
         <ul>
             <?php  $stats=Utils::statsCarrito();?>
-            <li><a href="<?=base_url?>carrito/index">Ver mi carrito</a></li>
-            <li><a href="<?=base_url?>carrito/index">Cantidad en carrito (<?=$stats['count']?>)</a></li>
+            <li><a href="<?=base_url?>carrito/index">Ver mi carrito (<?=$stats['count']?>)</a></li>
             <li><a href="<?=base_url?>carrito/delete_All">Vaciar carrito</a></li>
         </ul>
     </div>
@@ -31,13 +30,13 @@
     </div>
     <ul>
         <?php if(isset($_SESSION["admin"])):?>
-            <li><a href="#">Gestionar Pedidos</a></li>
+            <li><a href="<?=base_url?>pedido/gestion">Gestionar Pedidos</a></li>
             <li><a href="<?=base_url?>producto/gestion">Gestionar Productos</a></li>
             <li><a href="<?=base_url?>categoria/index">Gestionar Categorias</a></li>
         <?php endif;?>
 
         <?php if(isset($_SESSION["identity"])):?>
-            <li><a href="#">Mis Pedidos</a></li>
+            <li><a href="<?=base_url?>pedido/misPedidos">Mis Pedidos</a></li>
             <li><a href="<?=base_url?>usuario/logout">Cerrar sesion</a></li>
         <?php else:?>
             <li><a href="<?=base_url?>usuario/registro">Registarse</a></li>
